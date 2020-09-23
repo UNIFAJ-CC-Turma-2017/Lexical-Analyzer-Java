@@ -4,64 +4,33 @@ import java.util.LinkedHashMap;
 
 public class Output {
 
-	private static LinkedHashMap<Integer, String> output = new LinkedHashMap<Integer, String>();
-	
-	public static void setIdentifier(int line, String value){
-		int index;
-		if((index = Symbols.getIndexIfExists(value)) != 0){
-			output.put(line, "IDENTIFICADOR "+ index);
-		}else{
-			output.put(line, "IDENTIFICADOR " + Symbols.getIndexOfIdentifier(value));
-		}
+	private static LinkedHashMap<String, String> output = new LinkedHashMap<String, String>();
+
+	public static void setPunctuation(String lexema) {
+		output.put(lexema, "PONTUACAO");
 	}
 
-	public static void setInt(int line){
-		output.put(line, "INT");
+	public static void setType(String lexema) {
+		output.put(lexema, "TIPO");
+	}
+
+	public static void setNumber(String lexema) {
+		output.put(lexema, "NUMERO");
 	}
 	
-	public static void setFloat(int line){
-		output.put(line, "FLOAT");
+	public static void setCommentIdentifier(String lexema){
+		output.put(lexema, "COMENTARIO");
 	}
 	
-	public static void setChar(int line){
-		output.put(line, "CHAR");
+	public static void setVariableIdentifier(String lexema){
+		output.put(lexema, "VARIAVEL");
 	}
 	
-	public static void setDouble(int line){
-		output.put(line, "DOUBLE");
+	public static void setReservedWord(String lexema){
+		output.put(lexema, "PALAVRA RESERVADA");
 	}
 	
-	public static void setReal(int line){
-		output.put(line, "REAL");
-	}
-	
-	public static void setBoolean(int line){
-		output.put(line, "BOOLEAN");
-	}
-	
-	public static void setIntegerIdentifier(int line, String value){
-		int index;
-		if((index = Symbols.getIndexIfExists(value)) != 0){
-			output.put(line, "NÚMERO INTEIRO " + index);
-		}else{
-			output.put(line, "NÚMERO INTEIRO " + Symbols.getIndexOfIdentifier(value));
-		}
-	}
-	
-	public static void setFloatIdentifier(int line, String value){
-		int index;
-		if((index = Symbols.getIndexIfExists(value)) != 0){
-			output.put(line, "NÚMERO REAL " + index);
-		}else{
-			output.put(line, "NÚMERO REAL " + Symbols.getIndexOfIdentifier(value));
-		}
-	}
-	
-	public static void setCommentIdentifier(int line, String value){
-		output.put(line, "COMENTÁRIO");
-	}
-	
-	public static LinkedHashMap<Integer, String> getOutput(){
+	public static LinkedHashMap<String, String> getOutput(){
 		return output;
 	}
 }
