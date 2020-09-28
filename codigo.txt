@@ -1,0 +1,10 @@
+blocoprincipal
+{
+/* Minha primeira linguage */
+se ( 100 > 10 )
+{
+imprimi 100;
+} senao {
+imprimi 10;
+}
+}
